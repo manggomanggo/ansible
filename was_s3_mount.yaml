@@ -4,7 +4,7 @@
   vars_files:
           - variable.yaml
   become: true
-  tasks:      
+  tasks:  
           - name: install package
             yum:
                     name: 

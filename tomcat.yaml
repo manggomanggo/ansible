@@ -9,7 +9,7 @@
                   db_instance_identifier: '{{ project_name }}'
             register: rds
 - name: was
-  hosts: _cada_was
+  hosts: _wafo_was
   become: true
   vars_files:
     - variable.yaml
@@ -85,6 +85,11 @@
               <role rolename="manager-status"/>
               <user username="tomcat" password="tomcat" roles="manager-gui,manager-script,manager-status,manager-jmx"/>
       insertbefore: '^</tomcat-users>$' 
+  - name: access log file
+    replace:
+      dest: /usr/share/tomcat/conf/server.xml
+      replace: 'suffix=".log"'
+      regexp: 'suffix=".txt"'
   - name: sed
     replace:
       dest: "{{ item.dest }}"
