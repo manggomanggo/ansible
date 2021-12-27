@@ -33,7 +33,7 @@
     args:
             executable: /bin/bash
   - name: tar tomcat
-    shell: sudo tar xvzf apache-tomcat-9.0.56.tar.gz -C /usr/share/
+    shell: sudo tar xf apache-tomcat-9.0.56.tar.gz -C /usr/share/
     args:
             executable: /bin/bash
   - name: ln tomcat
