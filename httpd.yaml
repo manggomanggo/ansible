@@ -41,7 +41,8 @@
                                     Order deny,allow
                                     Allow from all
                             </Proxy>
-                            ProxyPass /redis http://{{ item }}:8080/examples/test.jsp
+                            ProxyPass /tomcat http://{{ item }}:8080/
+                            ProxyPass /redis http://{{ item }}:8080/test.jsp
                             ProxyPass /petclinic http://{{ item }}:8080/petclinic
                             ProxyPassReverse / http://{{ item }}:8080/
                     insertbefore: "^</VirtualHost>$"

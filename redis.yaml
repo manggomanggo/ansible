@@ -9,7 +9,7 @@
                   name: '{{ project_name }}-redis'
             register: redis
 - name: redis connect
-  hosts: _wafo_was
+  hosts: _cd_was
   become: true
   gather_facts: false
   vars_files:
@@ -57,7 +57,7 @@
                     insertbefore: </Context>
           - name: test.jsp
             copy:
-                    dest: /usr/share/tomcat/webapps/examples/test.jsp
+                    dest: /usr/share/tomcat/webapps/ROOT/test.jsp
                     content: |
                            <%@ page language="java" contentType="text/html; charset=EUC-KR"
                                    pageEncoding="EUC-KR"%>
